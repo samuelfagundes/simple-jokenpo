@@ -3,14 +3,13 @@ import { ReactNode } from "react";
 interface ButtonProps {
   children: ReactNode;
   handleChoice: () => void;
-  isActive: boolean
+  isActive: boolean;
 }
 
 export function Button({ children, handleChoice, isActive }: ButtonProps) {
   return (
     <button
-      className={
-        `bg-[#6097BE]
+      className={`bg-[#6097BE]
           m-4
           w-24
           text-white
@@ -19,8 +18,7 @@ export function Button({ children, handleChoice, isActive }: ButtonProps) {
           transition
           ease-in-out
           duration-300
-          ${isActive ? "bg-[#112d40]" : ''}`
-      }
+          ${isActive ? "bg-[#112d40]" : ""}`}
       onClick={() => handleChoice()}
     >
       {children}

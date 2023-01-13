@@ -11,7 +11,7 @@ export function App() {
 
   function handleChoice(chosenOne: string) {
     setChoice(chosenOne);
-    setIsActive(chosenOne)
+    setIsActive(chosenOne);
     setIsResultHidden(true);
     computerChoice();
   }
@@ -49,7 +49,7 @@ export function App() {
       setWinner("Draw");
     }
     setChoice("");
-    setIsActive('')
+    setIsActive("");
   }
 
   return (
@@ -59,9 +59,24 @@ export function App() {
       </h1>
       <section className="flex-1">
         <span className="font-bold">Choose wisely:</span>
-        <Button handleChoice={() => handleChoice("Rock")} isActive={isActive === "Rock"}>Rock</Button>
-        <Button handleChoice={() => handleChoice("Paper")} isActive={isActive === "Paper"}>Paper</Button>
-        <Button handleChoice={() => handleChoice("Scissors")} isActive={isActive === "Scissors"}>Scissors</Button>
+        <Button
+          handleChoice={() => handleChoice("Rock")}
+          isActive={isActive === "Rock"}
+        >
+          Rock
+        </Button>
+        <Button
+          handleChoice={() => handleChoice("Paper")}
+          isActive={isActive === "Paper"}
+        >
+          Paper
+        </Button>
+        <Button
+          handleChoice={() => handleChoice("Scissors")}
+          isActive={isActive === "Scissors"}
+        >
+          Scissors
+        </Button>
       </section>
       <section className="mb-8">
         <span>
@@ -77,7 +92,16 @@ export function App() {
         Go!
       </button>
       <section>
-        <span className="text-xl">Result: {winner === 'Player' ? 'You win! :D' : winner === 'Computer' ? 'You lose! :(' : winner === "Draw" ? "Draw ._." : ''}</span>
+        <span className="text-xl">
+          Result:{" "}
+          {winner === "Player"
+            ? "You win! :D"
+            : winner === "Computer"
+            ? "You lose! D:"
+            : winner === "Draw"
+            ? "Draw ¯\\_(ツ)_/¯"
+            : ""}
+        </span>
       </section>
     </div>
   );
